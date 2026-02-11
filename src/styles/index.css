@@ -1,0 +1,54 @@
+@import './fonts.css';
+@import './tailwind.css';
+@import './theme.css';
+
+/* Smooth transitions for interactive elements */
+* {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+/* Remove transition for elements that shouldn't animate */
+input, textarea, select {
+  transition: none;
+}
+
+/* Print styles */
+@media print {
+  @page {
+    margin: 1.5cm;
+    size: A4;
+  }
+  
+  body {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+  
+  .print\:hidden {
+    display: none !important;
+  }
+  
+  .print\:shadow-none {
+    box-shadow: none !important;
+  }
+  
+  .print\:rounded-none {
+    border-radius: 0 !important;
+  }
+  
+  .print\:px-12 {
+    padding-left: 3rem !important;
+    padding-right: 3rem !important;
+  }
+  
+  .print\:py-8 {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+  
+  .print\:scale-125 {
+    transform: scale(1.25);
+  }
+}
